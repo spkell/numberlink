@@ -1,0 +1,43 @@
+1  2  3  4  5
+6  7  8  9  10
+11 12 13 14 15
+16 17 18 19 20
+21 22 23 24 25
+
+Numbers (1:5) = (a,b,c,d,e)
+
+
+#At most 1 number can be true per square
+
+For each (rc):
+	for I in number:
+		for j in number:
+			if I != j:
+				phi.addclause(-1*GV(r,c,i),-1*GV(r,c,j) )
+
+#At least 1 number must be true per square
+
+For each (rc):
+	temp_or = []
+	for I in number:
+		temp_or.append(i)
+	phi.addclause(temp_or)
+
+
+#Starting numbers must connect to ending numbers
+
+	#If number is starter or ender, there must be exactly 1 adjacent same number coming off of it
+	
+	
+
+	#If number is not a starter or ender, there must be exactly 2
+
+   A
+D  E  B
+   C
+
+#At least
+(a+b),(a+c),(a+d),(b+c),(b+d),(c+d)
+
+#At Most
+(-a,-b,-c)+(-a,-b,-d)+(-a,-c,-d)+(-b,-c,-d)
